@@ -1,0 +1,14 @@
+version: "3"
+services:
+  site:
+    container_name: Naibor
+    command: tail -f /dev/null
+    image: jekyll/jekyll:latest
+    network_mode: host
+    volumes:
+      - ./:/srv/jekyll
+      - ./vendor/bundle:/usr/local/bundle
+    ports:
+      - 4000:4000
+      - 35729:35729
+      - 80:4000
